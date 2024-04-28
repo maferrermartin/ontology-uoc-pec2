@@ -1,0 +1,603 @@
+@prefix : <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl#> .
+
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl> rdf:type owl:Ontology ;
+                                                                       owl:versionIRI <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/1.0.0> ;
+                                                                       <http://purl.org/dc/elements/1.1/creator> "Miguel Ángel Ferrer Martín" ;
+                                                                       <http://purl.org/dc/elements/1.1/description> """An ontology containing the constructs on Qatar and Ryanair airline reviews.
+
+The ontology aims to be a common framework to unify the terms, classes, properties and relationships on the lexicon, words or expressions for the classification and scoring of airlines.
+It will be sought that users, when having to search for information about the quality of a conduit, have a developed ontology that facilitates and improves the experience in searching for data in this regard.
+
+Two CSV files from two different airlines (Qatar and Ryanair) containing the ratings given by customers will be used to create the ontology. The objective will be to obtain a common framework that allows obtaining the maximum quantity and quality of information from both formats, unifying criteria and concepts that serve as a common framework for both formats.
+
+Competency Questions:
+• What does a user value to classify the quality of a flight?
+• Which airplanes get the best or worst ratings?
+• What complaints are the most common?
+• What destinations are most frequent?
+
+UOC - PEC2 - Knowledge representation""" ;
+                                                                       <http://purl.org/dc/elements/1.1/title> "Airway-reviews" ;
+                                                                       owl:versionInfo 1.0 .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:AnnotationProperty .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#sameAs
+rdfs:sameAs rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/allowDo
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/allowDo> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> ;
+                                                                              rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/arePartFrom
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/arePartFrom> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Catering> ,
+                                                                                              <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/belongsTo
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/belongsTo> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Luggage> ;
+                                                                                rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/canCarry
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/canCarry> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> ;
+                                                                               rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Luggage> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/has
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/has> rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAircrafts
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAircrafts> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> ;
+                                                                                   rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasDestinty
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasDestinty> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:subPropertyOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/has> ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/City> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasOrigin
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasOrigin> rdf:type owl:ObjectProperty ;
+                                                                                rdfs:subPropertyOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/has> ;
+                                                                                rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> ;
+                                                                                rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/City> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasSeats
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasSeats> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:subPropertyOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/has> ;
+                                                                               rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> ;
+                                                                               rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isControledBy
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isControledBy> rdf:type owl:ObjectProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> ;
+                                                                                    rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Pilot> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isCustomerTo
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isCustomerTo> rdf:type owl:ObjectProperty ;
+                                                                                   rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> ;
+                                                                                   rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isFrom
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isFrom> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Person> ;
+                                                                             rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Country> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isLocatedIn
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isLocatedIn> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/City> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Country> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isOfferedBy
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isOfferedBy> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Catering> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Steward> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isOfferedTo
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isOfferedTo> rdf:type owl:ObjectProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Catering> ;
+                                                                                  rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isScoredBy
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isScoredBy> rdf:type owl:ObjectProperty ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> ;
+                                                                                 rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isUsedBy
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isUsedBy> rdf:type owl:ObjectProperty ;
+                                                                               rdfs:subPropertyOf owl:topObjectProperty ;
+                                                                               rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> ;
+                                                                               rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/manage
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/manage> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> ;
+                                                                             rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/AirTrafficController> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/needDo
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/needDo> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> ;
+                                                                             rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/offersMenu
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/offersMenu> rdf:type owl:ObjectProperty ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Beverage> ,
+                                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Food> ;
+                                                                                 rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Catering> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/scoresWith
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/scoresWith> rdf:type owl:ObjectProperty ;
+                                                                                 rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> ;
+                                                                                 rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/typeOf
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/typeOf> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> ;
+                                                                             rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/workIn
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/workIn> rdf:type owl:ObjectProperty ;
+                                                                             rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Pilot> ,
+                                                                                         <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Steward> ;
+                                                                             rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/worksTo
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/worksTo> rdf:type owl:ObjectProperty ;
+                                                                              rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Worker> ;
+                                                                              rdfs:range <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAircraftModel
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAircraftModel> rdf:type owl:DatatypeProperty ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> ;
+                                                                                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAirportName
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAirportName> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> ;
+                                                                                     rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAirwayPrice
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAirwayPrice> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> ;
+                                                                                     rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasCateringPrice
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasCateringPrice> rdf:type owl:DatatypeProperty ;
+                                                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Catering> ;
+                                                                                       rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasInternationalAirway
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasInternationalAirway> rdf:type owl:DatatypeProperty ;
+                                                                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                             rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> ;
+                                                                                             rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasLuggageSize
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasLuggageSize> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Luggage> ;
+                                                                                     rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasLuggageWeight
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasLuggageWeight> rdf:type owl:DatatypeProperty ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Luggage> ;
+                                                                                       rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasPassegerID
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasPassegerID> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> ;
+                                                                                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasPersonName
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasPersonName> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Person> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingBody
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingBody> rdf:type owl:DatatypeProperty ;
+                                                                                    rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> ;
+                                                                                    rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingHeader
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingHeader> rdf:type owl:DatatypeProperty ;
+                                                                                      rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> ;
+                                                                                      rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingPublishDate
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingPublishDate> rdf:type owl:DatatypeProperty ;
+                                                                                           rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                           rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> ;
+                                                                                           rdfs:range xsd:dateTime .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingRecommendation
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingRecommendation> rdf:type owl:DatatypeProperty ;
+                                                                                              rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScore
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScore> rdf:type owl:DatatypeProperty ;
+                                                                                     rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> ;
+                                                                                     rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScoreCatering
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScoreCatering> rdf:type owl:DatatypeProperty ;
+                                                                                             rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                             rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> ;
+                                                                                             rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScoreSeats
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScoreSeats> rdf:type owl:DatatypeProperty ;
+                                                                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> ;
+                                                                                          rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRetingScorePrice
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRetingScorePrice> rdf:type owl:DatatypeProperty ;
+                                                                                          rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                          rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> ;
+                                                                                          rdfs:range xsd:int .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasSeatType
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasSeatType> rdf:type owl:DatatypeProperty ;
+                                                                                  rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> ;
+                                                                                  rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasTypeTraveller
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasTypeTraveller> rdf:type owl:DatatypeProperty ;
+                                                                                       rdfs:subPropertyOf owl:topDataProperty ;
+                                                                                       rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> ;
+                                                                                       rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasWorkerID
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasWorkerID> rdf:type owl:DatatypeProperty ;
+                                                                                  rdfs:domain <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Worker> ;
+                                                                                  rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/AirTrafficController
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/AirTrafficController> rdf:type owl:Class ;
+                                                                                           rdfs:subClassOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Worker> ;
+                                                                                           rdfs:comment "The ground-based personnel and equipment concerned with controlling and monitoring air traffic within a particular area." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Vehicle> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Beverage
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Beverage> rdf:type owl:Class ;
+                                                                               rdfs:comment "A drink of any type." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Catering
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Catering> rdf:type owl:Class ;
+                                                                               rdfs:comment "The provision of food and drink at a social event or other gathering." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/City
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/City> rdf:type owl:Class ;
+                                                                           rdfs:comment "A large town." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Country
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Country> rdf:type owl:Class ;
+                                                                              rdfs:comment "A nation with its own government, occupying a particular territory." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Food
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Food> rdf:type owl:Class ;
+                                                                           rdfs:comment "Any nutritious substance that people or animals eat or drink or that plants absorb in order to maintain life and growth." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> rdf:type owl:Class ;
+                                                                              owl:equivalentClass <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Travel> ,
+                                                                                                  <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Trip> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Luggage
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Luggage> rdf:type owl:Class ;
+                                                                              rdfs:comment "Suitcases or other bags in which to pack personal belongings for travelling." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Person> ;
+                                                                               rdfs:comment "A traveller on a public or private conveyance other than the driver, pilot, or crew." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Person
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Person> rdf:type owl:Class ;
+                                                                             rdfs:comment "A human being regarded as an individual." ;
+                                                                             rdfs:sameAs "https://dbpedia.org/ontology/Person" .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Pilot
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Pilot> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Worker> ;
+                                                                            rdfs:comment "A person who operates the flying controls of an aircraft." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Plane
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Plane> rdf:type owl:Class ;
+                                                                            rdfs:subClassOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Vehicle> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScore> ;
+                                                                                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange owl:rational
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScoreCatering> ;
+                                                                                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange owl:rational
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScoreSeats> ;
+                                                                                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange owl:rational
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRetingScorePrice> ;
+                                                                                                owl:minQualifiedCardinality "0"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange owl:rational
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScore> ;
+                                                                                                owl:maxQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange owl:rational
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScoreCatering> ;
+                                                                                                owl:maxQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange owl:rational
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScoreSeats> ;
+                                                                                                owl:maxQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange owl:rational
+                                                                                              ] ,
+                                                                                              [ rdf:type owl:Restriction ;
+                                                                                                owl:onProperty <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRetingScorePrice> ;
+                                                                                                owl:maxQualifiedCardinality "10"^^xsd:nonNegativeInteger ;
+                                                                                                owl:onDataRange owl:rational
+                                                                                              ] ;
+                                                                              rdfs:comment "A classification or ranking of someone or something based on a comparative assessment of their quality, standard, or performance." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Security
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Security> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Worker> ;
+                                                                               rdfs:comment "A person employed to protect a building against intruders or damage." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Steward
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Steward> rdf:type owl:Class ;
+                                                                              rdfs:subClassOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Worker> ;
+                                                                              rdfs:comment "A person employed to look after the passengers on a ship, aircraft, or train." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Travel
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Travel> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Trip
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Trip> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Vehicle
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Vehicle> rdf:type owl:Class ;
+                                                                              rdfs:comment "A thing used for transporting people or goods, especially on land, such as a car, lorry, or cart." .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Worker
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Worker> rdf:type owl:Class ;
+                                                                             rdfs:subClassOf <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Person> ;
+                                                                             rdfs:comment "A person who does a specified type of work or who works in a specified way." .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> rdf:type owl:NamedIndividual ,
+                                                                                        <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> ;
+                                                                               <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/allowDo> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> rdf:type owl:NamedIndividual ,
+                                                                                       <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> ;
+                                                                              <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAircrafts> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> ;
+                                                                              <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasAirportName> "Haneda Airport" .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Japan
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Japan> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Country> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> rdf:type owl:NamedIndividual ,
+                                                                                       <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> ;
+                                                                              <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasTypeTraveller> "Solo Leisure" .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/London_Heathrow_via_Doha
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/London_Heathrow_via_Doha> rdf:type owl:NamedIndividual ,
+                                                                                                        <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/City> ;
+                                                                                               <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isLocatedIn> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/United_Kingdom> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Rating
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Rating> rdf:type owl:NamedIndividual ,
+                                                                                      <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Ranting> ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingBody> "The delay of my flight from Haneda to Doha caused a bit of chaos upon arrival. Despite my efforts to reach the gate promptly, I was denied boarding due to luggage issues, and the lack of assistance added to the frustration. I paid for an Economy Comfort package, which was supposed to include an aisle seat. However, upon boarding, I was informed that no aisle seats were available, despite assurances beforehand. Additionally, my luggage tag was lost during the boarding pass exchange, leading to further uncertainty upon arrival in London. What was meant to be a 19-hour journey turned into a 27-hour ordeal. When I requested assistance from staff regarding a re-arrangement they promised to get back to me within 5-10 minutes, but no one followed up until I reached out again. The security queue at Heathrow on departure from the UK was incredibly long, with a wait time of about 1.5 hours just to get through. Overall, while the crew onboard was courteous and provided great service, the experience was marred by these inconveniences." ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingHeader> "marred by inconveniences" ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingPublishDate> "2024-03-02T00:00:00"^^xsd:dateTime ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingRecommendation> "no" ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasRatingScore> 1 .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> rdf:type owl:NamedIndividual ,
+                                                                                    <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> ;
+                                                                           <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isUsedBy> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Traveler> ;
+                                                                           <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasSeatType> "Economy Class" .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> rdf:type owl:NamedIndividual ,
+                                                                                      <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasDestinty> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/London_Heathrow_via_Doha> ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasOrigin> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Tokyo> ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasSeats> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isScoredBy> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Rating> ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/typeOf> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> ;
+                                                                             <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasInternationalAirway> "yes" .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Tokyo
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Tokyo> rdf:type owl:NamedIndividual ,
+                                                                                     <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/City> ;
+                                                                            <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isLocatedIn> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Japan> .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Traveler
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Traveler> rdf:type owl:NamedIndividual ,
+                                                                                        <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Passager> ;
+                                                                               <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isCustomerTo> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> ;
+                                                                               <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/isFrom> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/United_Kingdom> ;
+                                                                               <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/needDo> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> ;
+                                                                               <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/scoresWith> <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Rating> ;
+                                                                               <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasPassegerID> "12345" ;
+                                                                               <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/hasPersonName> "Mary Le" .
+
+
+###  http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/United_Kingdom
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/United_Kingdom> rdf:type owl:NamedIndividual ,
+                                                                                              <http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Country> .
+
+
+#################################################################
+#    Annotations
+#################################################################
+
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Aircraft> rdfs:comment "An aeroplane, helicopter, or other machine capable of flight." ;
+                                                                               rdfs:sameAs "https://dbpedia.org/ontology/Aircraft" .
+
+
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Airport> rdfs:comment "A place from which aircraft operate that usually has paved runways and maintenance facilities and often serves as a terminal." ;
+                                                                              rdfs:sameAs "https://dbpedia.org/ontology/Airport" .
+
+
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Journey> rdfs:comment "An act of travelling from one place to another." .
+
+
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Seat> rdfs:comment "A thing made or used for sitting on, such as a chair or stool." .
+
+
+<http://www.semanticweb.org/W3C/ontologies/2024/3/airway-reviews.owl/Skyway> rdfs:comment "A recognized route followed by aircraft." .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
